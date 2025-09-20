@@ -1,0 +1,9 @@
+:root {
+  --background-color: beige;
+  --text-font: monospace;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--text-font);
+}

@@ -1,0 +1,13 @@
+.thumbnail-image {
+  width: 100px;
+  height: 100px;
+  object-fit: fill;
+  margin: 5px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.thumbnail-image:hover {
+  transform: scale(1.1);
+  box-shadow: rgb(59, 59, 59) 0 0 5px 2px;
+}
