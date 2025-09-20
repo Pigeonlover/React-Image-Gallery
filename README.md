@@ -43,3 +43,8 @@ Stretch Requirements
 🏹 Set up an Unsplash application that you can fetch from your React app.
 🏹 Use .env to hide your API keys and tokens from the code.
 🏹 Style the application excellently, using grid or flex and positioning.
+
+## References
+
+- Media queries --> https://css-tricks.com/a-complete-guide-to-css-media-queries/
+- Accessibly go through the thumbnail images and be able to select them with the Enter key --> https://useful.codes/keyboard-events-and-accessibility-in-react/

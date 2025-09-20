@@ -3,8 +3,9 @@
 // - Start with your wireframe: you build your React client based on the UI
 
 import "./App.css";
-import "./components/imageComponent/Thumbnails.css";
-import Thumbnails from "./components/imageComponent/Thumbnails.jsx";
+import "./components/thumbnails/Thumbnails.css";
+import "./components/largeImage/LargeImage.css";
+import Thumbnails from "./components/thumbnails/Thumbnails.jsx";
 import LargeImage from "./components/largeImage/LargeImage.jsx";
 import { useState, useEffect } from "react";
 
@@ -13,25 +14,24 @@ export default function App() {
   // - state to store API image data
   // - state to store the index value (navigate between images)
   const [imageData, setImageData] = useState([]);
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
     async function getData() {
-      const response = await fetch("https://week-6-api.vercel.app/api/images");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}`);
       const data = await response.json();
       setImageData(data);
     }
     getData();
   }, []);
 
-  function handleThumbnailClick(idx) {
-    setSelectedIndex(idx);
+  function handleThumbnailClick(index) {
+    setSelectedIndex(index);
   }
 
   return (
-    <>
-      <h1>Gallery</h1>
-      <div>
+    <main>
+      <div className="thumbnails-container">
         <Thumbnails
           imageData={imageData}
           onThumbnailClick={handleThumbnailClick}
@@ -39,28 +39,10 @@ export default function App() {
         />
       </div>
 
-      <ul>
-        <li>Other elements:</li>
-        <li>A method to render all images</li>
-        <li>
-          An event to click on the images. The event handler here is how we
-          handle switching between images
-        </li>
-      </ul>
       {/* //======================================================= */}
-      <div>
-        This is a container for my larger images! This container is
-        conditionally rendered!
+      <div className="large-image-container">
+        <LargeImage image={imageData[selectedIndex]} />
       </div>
-      <LargeImage image={imageData[selectedIndex]} />
-      <ul>
-        <li>Other elements: </li>
-        <li>An element to contain the larger image</li>
-        <li>
-          Some conditional logic to render this element once the user has
-          clicked on the corresponding thumbnail
-        </li>
-      </ul>
-    </>
+    </main>
   );
 }

@@ -1,14 +1,10 @@
 export default function LargeImage({ image }) {
-  if (!image) return null; // Don't render if no image is selected
+  // Ternary operators! :D
+  if (!image) return image; // First image in array appears on page load
 
   return (
     <div className="large-image-container">
-      <img
-        src={image.url}
-        alt={image.alt}
-        title={image.title}
-        style={{ width: "400px", height: "400px", objectFit: "contain" }}
-      />
+      <img src={image.url} alt={image.alt} title={image.title} />
     </div>
   );
 }
