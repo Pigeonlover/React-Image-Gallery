@@ -81,6 +81,25 @@ main {
   overflow: hidden;
 }
 
+@media screen and (max-width: 800px) {
+  .large-image-container {
+    height: 100%;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: auto;
+
+    border-top: 3px solid white;
+  }
+}
+
 /* Accessibility - accept reduced motion */
 @media screen and (prefers-reduced-motion: reduce) {
   * {

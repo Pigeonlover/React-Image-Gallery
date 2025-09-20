@@ -40,8 +40,9 @@ export default function App() {
       </div>
 
       {/* //======================================================= */}
+
       <div className="large-image-container">
-        <LargeImage image={imageData[selectedIndex]} />
+        <LargeImage image={imageData.results?.[selectedIndex]} />
       </div>
     </main>
   );

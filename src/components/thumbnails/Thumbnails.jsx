@@ -3,15 +3,16 @@ export default function Thumbnails({
   onThumbnailClick,
   selectedIndex,
 }) {
+  const images = imageData.results || [];
   return (
     <>
-      {imageData.map((item, index) => (
+      {images.map((item, index) => (
         <img
           className="thumbnail-image"
           key={item.id}
-          src={item.url}
-          title={item.title}
-          alt={item.alt}
+          src={item.urls.regular}
+          title={item.description}
+          alt={item.alt_description}
           onClick={() => onThumbnailClick(index)}
           // Accessibility fetures
           tabIndex={0} // --> images are focusable
