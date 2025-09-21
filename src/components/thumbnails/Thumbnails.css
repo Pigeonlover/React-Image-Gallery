@@ -1,12 +1,20 @@
 .thumbnail-image {
-  width: 100px;
-  height: 100px;
+  width: clamp(90px, 100px, 120px);
+  min-height: 100px;
   object-fit: cover;
   display: block;
 
   margin: 5px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+/* Keep the thumbnail images as circles on smaller screens */
+@media screen and (max-width: 800px) {
+  .thumbnail-image {
+    min-width: 100px;
+    height: clamp(90px, 100px, 120px);
+  }
 }
 
 .thumbnail-image:hover {

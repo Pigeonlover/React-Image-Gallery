@@ -1,3 +1,4 @@
+//
 export default function Thumbnails({
   imageData,
   onThumbnailClick,
@@ -22,6 +23,7 @@ export default function Thumbnails({
               onThumbnailClick(index); // --> Enter key selects focused image
             }
           }}
+          // When picture is selected/showing as a large image, style differs from other thumbnails to make it obvious
           style={
             index === selectedIndex
               ? { border: "3px solid rgb(0, 255, 255)" }
