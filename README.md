@@ -27,7 +27,7 @@ In the end I had to abandon the endeavour as I was worried trying would break ev
 
 ## References
 
-- Some extra revision/learning on React --> https://laracasts.com/series/react-the-laravel-way
+- Some extra revision/learning on React --> https://laracasts.com/series/react-from-scratch
   and https://www.w3schools.com/react/
   and https://react.dev/learn
 - Media queries --> https://css-tricks.com/a-complete-guide-to-css-media-queries/
